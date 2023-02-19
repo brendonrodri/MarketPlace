@@ -4,7 +4,7 @@ export const ProductBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     p{
         width: 33%;
         text-align: justify;

@@ -4,7 +4,7 @@ export const ProductContainer = styled.section`
     width: 80vw;
     margin: 0 auto;
     background-color: blue;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Roboto', sans-serif;
 `
 export const ProductList = styled.section`
     display: flex;
