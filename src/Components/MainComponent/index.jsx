@@ -1,10 +1,11 @@
 import React, {useState} from "react"
 import { Contexto } from "../../Services/Context/context"
 import { produtos } from "../../Services/Data/products.js/productData"
+import ModalProductComponent from "../Modals/ProductModal"
 import { Produto1, Produto2, Produto3 } from "../ProductsComponents/index"
 import * as S from "./style"
 export default function MainComponent  (){
-    const {stateContext, setStateContext} = React.useContext(Contexto)
+    const {stateContext, setStateContext, modal, setModal} = React.useContext(Contexto)
     console.log(stateContext)
   //primeiro criamos uma array de objetos que está sendo importa com cada um dos nosso produtos, contendo nome, caracteristica e nosso valor
   //que será a informação necessária para sabermos qual produto sera exibido na tela
@@ -35,13 +36,22 @@ export default function MainComponent  (){
             esse botão faz parte
         */}
         <S.ProductList> 
+            {modal && ModalProductComponent()}
             {produtos.map((item)=>(
-                <S.ProductCard  onMouseEnter={()=>{
+                <S.ProductCard  
+                onMouseEnter={()=>{
                     handleProduct(item.value)
-                }} key={item.value}>
+                }}
+                onClick={()=>{
+                    if(modal===false){
+                        setModal(true)
+                    }else{
+                        setModal(false)
+                    }
+                }}
+                key={item.value}>
                     <p>{item.name}</p>
                     <p>{item.caracteristica}</p>
-                    <button >Mudar produto</button>
                 </S.ProductCard>
             ))}
         </S.ProductList>
