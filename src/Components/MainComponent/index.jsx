@@ -1,8 +1,11 @@
 import React, {useState} from "react"
+import { Contexto } from "../../Services/Context/context"
 import { produtos } from "../../Services/Data/products.js/productData"
 import { Produto1, Produto2, Produto3 } from "../ProductsComponents/index"
 import * as S from "./style"
 export default function MainComponent  (){
+    const {stateContext, setStateContext} = React.useContext(Contexto)
+    console.log(stateContext)
   //primeiro criamos uma array de objetos que está sendo importa com cada um dos nosso produtos, contendo nome, caracteristica e nosso valor
   //que será a informação necessária para sabermos qual produto sera exibido na tela
   //criamos um estado que será alterado a cada click do botão
