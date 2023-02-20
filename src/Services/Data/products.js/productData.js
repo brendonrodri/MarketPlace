@@ -1,3 +1,4 @@
+import { Produto1, Produto2, Produto3 } from "../../../Components/ProductsComponents";
 export const produtos = [
     {
       name: "Produto 1",
@@ -15,3 +16,11 @@ export const produtos = [
       value: "produto3",
     },
   ];
+  export const infoProdutos = {
+    produto1: <Produto1 />,
+    produto2: <Produto2 />,
+    produto3: <Produto3 />
+  }
+  export const productId = {
+    productId: ""
+  }

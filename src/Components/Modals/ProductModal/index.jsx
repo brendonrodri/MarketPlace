@@ -2,26 +2,23 @@ import React,{useContext, useState} from "react"
 import { Contexto } from "../../../Services/Context/context"
 import * as S from "./style"
 export default function ModalProductComponent (){
-    const {stateContext, setStateContext, activeModal} = useContext(Contexto)
-    console.log('console do modal ', stateContext)
-    const ProductIndex = () =>{
-    
-        return(
-            <S.ModalProduct>
-                <p>{stateContext.slice(0,1).map((item)=>(
-                    <>{item.name}</>
-                ))}</p>
-                <button 
-                onClick={()=>{
-                    activeModal()
-                }}>
-                    Fechar</button>
-            </S.ModalProduct>
-        )
-    }
+    const {stateContext, activeModal} = useContext(Contexto)
     return(
         <>
-           <ProductIndex />
+            <ProductIndex />          
         </>
     )
+}
+const ProductIndex = () =>{
+    const {products, productIndex} = useContext(Contexto)
+    return(
+        <S.ModalProduct>
+            {products[productIndex.produtoId]}
+            <CloseModalButton />
+        </S.ModalProduct>
+    )
+}
+const CloseModalButton = () => {
+    const {activeModal} = useContext(Contexto)
+    return <S.CloseButton onClick={()=>{activeModal()}}>Fechar</S.CloseButton>
 }
