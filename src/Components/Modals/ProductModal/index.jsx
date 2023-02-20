@@ -1,8 +1,7 @@
-import React,{useContext, useState} from "react"
+import React,{useContext,} from "react"
 import { Contexto } from "../../../Services/Context/context"
 import * as S from "./style"
 export default function ModalProductComponent (){
-    const {stateContext, activeModal} = useContext(Contexto)
     return(
         <>
             <ProductIndex />          

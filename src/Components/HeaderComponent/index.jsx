@@ -5,10 +5,8 @@ import * as S from "./style";
 export default function HeaderComponent(){
     return(
         <S.HeaderStyle>
-            
             <NavBarComponent />
             <SearchBarComponent />
-            
         </S.HeaderStyle>
     )
 }
